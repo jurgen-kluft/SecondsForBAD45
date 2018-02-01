@@ -1,0 +1,17 @@
+{
+  "color": 0,
+  "split": false,
+  "vibration": true,
+  "_type": "int",
+  "halfwayAlert": false,
+  "duration": 30,
+  "music": {
+    "_type": "music",
+    "shuffle": false,
+    "volume": 1,
+    "resume": false,
+    "persist": false
+  },
+  "rest": false,
+  "name": "Deadlift"
+}

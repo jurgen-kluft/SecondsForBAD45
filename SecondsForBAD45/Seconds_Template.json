@@ -1,0 +1,184 @@
+{
+  "packs": [
+    {
+      "_type": "pack",
+      "name": "BAD45",
+      "items": [
+        {
+          "setRest": {
+            "color": 0,
+            "split": false,
+            "vibration": true,
+            "_type": "int",
+            "halfwayAlert": false,
+            "duration": 0,
+            "music": {
+              "_type": "music",
+              "shuffle": false,
+              "volume": 1,
+              "resume": false,
+              "persist": false
+            },
+            "rest": true,
+            "name": "Rest"
+          },
+          "cooldown": {
+            "color": 0,
+            "split": false,
+            "vibration": true,
+            "_type": "int",
+            "halfwayAlert": false,
+            "duration": 0,
+            "music": {
+              "_type": "music",
+              "shuffle": false,
+              "volume": 1,
+              "resume": false,
+              "persist": false
+            },
+            "rest": true,
+            "name": "Cooldown"
+          },
+          "hasBeenUsed": false,
+          "random": false,
+          "music": {
+            "_type": "music",
+            "shuffle": false,
+            "volume": 1,
+            "resume": true,
+            "persist": false
+          },
+          "warmup": {
+            "color": 0,
+            "split": false,
+            "vibration": true,
+            "_type": "int",
+            "halfwayAlert": false,
+            "duration": 0,
+            "music": {
+              "_type": "music",
+              "shuffle": false,
+              "volume": 1,
+              "resume": false,
+              "persist": false
+            },
+            "rest": true,
+            "name": "Warmup"
+          },
+          "overrun": false,
+          "type": 3,
+          "numberOfSets": 4,
+          "intervals": [
+            {
+              "color": 0,
+              "split": false,
+              "vibration": true,
+              "_type": "int",
+              "halfwayAlert": false,
+              "duration": 30,
+              "music": {
+                "_type": "music",
+                "shuffle": false,
+                "volume": 1,
+                "resume": false,
+                "persist": false
+              },
+              "rest": false,
+              "name": "Deadlift"
+            },
+            {
+              "color": 2,
+              "split": false,
+              "vibration": true,
+              "_type": "int",
+              "halfwayAlert": false,
+              "duration": 30,
+              "music": {
+                "_type": "music",
+                "shuffle": false,
+                "volume": 1,
+                "resume": false,
+                "persist": false
+              },
+              "rest": false,
+              "name": "Bridge Press"
+            },
+            {
+              "color": 3,
+              "split": false,
+              "vibration": true,
+              "_type": "int",
+              "halfwayAlert": false,
+              "duration": 30,
+              "music": {
+                "_type": "music",
+                "shuffle": false,
+                "volume": 1,
+                "resume": false,
+                "persist": false
+              },
+              "rest": false,
+              "name": "Rear Lunge"
+            },
+            {
+              "color": 8,
+              "split": false,
+              "vibration": true,
+              "_type": "int",
+              "halfwayAlert": false,
+              "duration": 30,
+              "music": {
+                "_type": "music",
+                "shuffle": false,
+                "volume": 1,
+                "resume": false,
+                "persist": false
+              },
+              "rest": false,
+              "name": "Bent Over Row"
+            },
+            {
+              "color": 7,
+              "split": false,
+              "vibration": true,
+              "_type": "int",
+              "halfwayAlert": false,
+              "duration": 30,
+              "music": {
+                "_type": "music",
+                "shuffle": false,
+                "volume": 1,
+                "resume": false,
+                "persist": false
+              },
+              "rest": false,
+              "name": "Squat"
+            }
+          ],
+          "intervalRest": {
+            "color": 4,
+            "split": false,
+            "vibration": true,
+            "_type": "int",
+            "halfwayAlert": false,
+            "duration": 30,
+            "music": {
+              "_type": "music",
+              "shuffle": false,
+              "volume": 1,
+              "resume": false,
+              "persist": false
+            },
+            "rest": true,
+            "name": "Rest"
+          },
+          "group": false,
+          "soundScheme": 5,
+          "activity": 0,
+          "_type": "circ",
+          "name": "BAD45 DB7- 1"
+        }
+      ]
+    }
+  ]
+}
