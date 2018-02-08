@@ -16,6 +16,9 @@ namespace BAD45
 
     public partial class Calendar
     {
+        [JsonProperty("start")]
+        public DateTime Start { get; set; }
+
         [JsonProperty("weeks")]
         public Week[] Weeks { get; set; }
 

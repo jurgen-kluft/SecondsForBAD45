@@ -12,6 +12,53 @@ namespace SecondsConverter
         {
             ConvertCalendarToSeconds("BAD45 Dumbbells", "BAD45_Calendar_Dumbbell.json"  , "BAD45_DB_Timers.seconds");
             ConvertCalendarToSeconds("BAD45 Kettlebells", "BAD45_Calendar_Kettlebell.json", "BAD45_KB_Timers.seconds");
+
+            ConvertCalendarToCSVEvents("BAD45 Dumbbells", "BAD45_Calendar_Dumbbell.json", "BAD45_DB_Timers.csv");
+            ConvertCalendarToCSVEvents("BAD45 Kettlebells", "BAD45_Calendar_Kettlebell.json", "BAD45_KB_Timers.csv");
+        }
+
+        static void ConvertCalendarToCSVEvents(string pack_name, string input_filepath, string output_filepath)
+        {
+            //Subject             Start Date  Start Time  End Date    End Time    All Day   Description          Location           UID
+            //My important event  4/19/2012	  6:00pm	  4/19/2012	  9:00pm      FALSE     Longer Description   San Francisco CA   abcdefghij@google.com
+            string bad45_calendar_json = File.ReadAllText(input_filepath);
+            BAD45.Calendar calendar = BAD45.Calendar.FromJson(bad45_calendar_json);
+
+            Seconds.Template pack = new Seconds.Template();
+
+            DateTime start = calendar.Start;
+
+            List<string> csv = new List<string>();
+            csv.Add("Title,Location,Category,Start Date,Start Time,End Date,End Time,All Day,Reminder,Description");
+
+            for (int week = 0; week < calendar.Weeks.Length; ++week)
+            {
+                BAD45.Week badweek = calendar.Weeks[week];
+                for (int day = 0; day < badweek.Days.Length; day++)
+                {
+                    string name = badweek.Days[day];
+                    BAD45.Workout workout = calendar.FindWorkout(name);
+
+                    string exercises = "";
+                    for (int exer = 0; exer < workout.Exercises.Length; exer++)
+                    {
+                        string exercise_name = workout.Exercises[exer];
+                        if (exer == 0)
+                        {
+                            exercises = exercise_name;
+                        } else
+                        {
+                            exercises += "+" + exercise_name;
+                        }
+                    }
+                    string row = workout.Name + ",Home,Exercise," + start.ToString("yyyy/MM/dd") + ",6:00am," + start.ToString("yyyy/MM/dd") + ",10:00am,No,," + exercises;
+                    csv.Add(row);
+
+                    start = start.AddDays(1);
+                }
+            }
+            
+            File.WriteAllLines(output_filepath, csv.ToArray());
         }
 
         static void ConvertCalendarToSeconds(string pack_name, string input_filepath, string output_filepath)
