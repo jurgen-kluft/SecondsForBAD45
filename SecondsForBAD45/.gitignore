@@ -2,9 +2,8 @@
 *
 !*/
 
-vendor/
-t2-output/
-target/
+bin/
+obj/
 tags
 
 #except the following files
@@ -24,7 +23,7 @@ tags
 !*.csproj
 !*.resx
 
-!*.hlsl
+!*.
 !*.fragment
 
 !*.md
@@ -35,4 +34,9 @@ tags
 !*.ini
 !*.bat
 
+!*.dll
+!*.pdb
+!*.xml
+
 #except the following folders
+!References/
